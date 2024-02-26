@@ -24,7 +24,7 @@ class ArticlesPage extends StatelessWidget {
       body: BlocProvider<ArticlesCubit>(
         create: (context) => ArticlesCubit(
           articlesRepository: ArticlesRepository(
-            remoteDataSource: ArticlesMockedDataSource(),
+            remoteDataSource: ArticlesRemoteDiodDataSource(),
           ),
         )..fetchData(
             authorId: author.id,
