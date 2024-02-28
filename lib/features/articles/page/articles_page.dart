@@ -5,6 +5,7 @@ import 'package:user_articles/app/injection_container.dart';
 import 'package:user_articles/domain/models/article_model.dart';
 import 'package:user_articles/domain/models/author_model.dart';
 import 'package:user_articles/features/articles/cubit/articles_cubit.dart';
+import 'package:user_articles/features/articles/page/concrete_article_page.dart';
 
 class ArticlesPage extends StatelessWidget {
   const ArticlesPage({
@@ -21,7 +22,8 @@ class ArticlesPage extends StatelessWidget {
         title: Text(author.name),
       ),
       body: BlocProvider<ArticlesCubit>(
-        create: (context) => getIt()..fetchData(
+        create: (context) => getIt()
+          ..fetchData(
             authorId: author.id,
           ),
         child: Column(
@@ -95,7 +97,13 @@ class _ArticleItemWidget extends StatelessWidget {
         vertical: 10,
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (builder) => const ConcreteArticlePage(),
+            ),
+          );
+        },
         child: Container(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
