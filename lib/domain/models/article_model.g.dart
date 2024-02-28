@@ -11,6 +11,8 @@ _$ArticleModelImpl _$$ArticleModelImplFromJson(Map<String, dynamic> json) =>
       json['id'] as int,
       json['author_id'] as int,
       json['content'] as String,
+      json['picture'] as String,
+      json['title'] as String,
     );
 
 Map<String, dynamic> _$$ArticleModelImplToJson(_$ArticleModelImpl instance) =>
@@ -18,4 +20,6 @@ Map<String, dynamic> _$$ArticleModelImplToJson(_$ArticleModelImpl instance) =>
       'id': instance.id,
       'author_id': instance.authorId,
       'content': instance.content,
+      'picture': instance.picture,
+      'title': instance.title,
     };

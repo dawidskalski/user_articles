@@ -15,4 +15,10 @@ class ArticlesRepository {
         .where((element) => element.authorId == authorId)
         .toList();
   }
+
+  Future<List<ArticleModel>> getArticlesForArticleId(int id) async {
+    final allArticles = await remoteDataSource.getArticles();
+
+    return allArticles.where((element) => element.id == id).toList();
+  }
 }

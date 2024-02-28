@@ -11,6 +11,8 @@ class ArticleModel with _$ArticleModel {
     int id,
     @JsonKey(name: 'author_id') int authorId,
     String content,
+    String picture,
+    String title,
   ) = _ArticleModel;
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) =>

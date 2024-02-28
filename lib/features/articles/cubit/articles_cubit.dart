@@ -41,4 +41,25 @@ class ArticlesCubit extends Cubit<ArticlesState> {
       );
     }
   }
+
+  Future<void> downloadSpecificData({required int id}) async {
+    try {
+      final results = await articlesRepository.getArticlesForArticleId(id);
+      emit(
+        ArticlesState(
+          results: results,
+          status: Status.success,
+          errorMessage: null,
+        ),
+      );
+    } catch (error) {
+      emit(
+        ArticlesState(
+          results: [],
+          status: Status.error,
+          errorMessage: error.toString(),
+        ),
+      );
+    }
+  }
 }

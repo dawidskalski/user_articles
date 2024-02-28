@@ -36,6 +36,7 @@ class HomePage extends StatelessWidget {
                     for (final author in state.results)
                       _AuthorItemWidget(
                         model: author,
+                        
                       ),
                   ],
                 );

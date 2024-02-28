@@ -5,7 +5,7 @@ import 'package:user_articles/app/injection_container.dart';
 import 'package:user_articles/domain/models/article_model.dart';
 import 'package:user_articles/domain/models/author_model.dart';
 import 'package:user_articles/features/articles/cubit/articles_cubit.dart';
-import 'package:user_articles/features/articles/page/concrete_article_page.dart';
+import 'package:user_articles/features/articles/page/specific_article_page.dart';
 
 class ArticlesPage extends StatelessWidget {
   const ArticlesPage({
@@ -100,7 +100,7 @@ class _ArticleItemWidget extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (builder) => const ConcreteArticlePage(),
+              builder: (builder) => SpecificArticlePage(model: model),
             ),
           );
         },
